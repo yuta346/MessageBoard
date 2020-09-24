@@ -1,0 +1,44 @@
+{% extends "base.html"%}
+{% block content%}
+
+    <div class="navbar">
+        <p id="name" >Flask Message Board</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('signin')}}">Sing in</a></li>
+                <li><a href="{{ url_for('signup')}}">Sing up</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <body style="background-image:url({{url_for('static', filename='img/bg.jpg')}})"></body>
+    
+    <div class="flash">
+        {% block flash %}
+            {% with messages=get_flashed_messages()%}  
+                {% if messages %}
+                    {% for msg in messages %}
+                        <p>{{msg}}</p>
+                    {% endfor%}
+                {% endif %}
+            {% endwith %}
+        {% endblock flash %}
+    </div>
+
+    <div class="container">
+        <p id="welcome">Welcome to Flask Message Board</p>
+        <a class="join" href="{{ url_for('signup')}}">Join Now</a>
+        
+    </div>
+</body>
+
+{% endblock content%}
+
+{% block footer%}
+    <div class="wrapper">
+        <footer>
+            <hr>
+            <p>&copy; 2020 yhagiwara.com<p>
+        </footer>
+    </div>
+{% endblock footer%}

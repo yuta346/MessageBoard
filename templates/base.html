@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/51b82569f7.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if request.endpoint == 'signin' %}
+    <link href="{{ url_for('static', filename='css/input.css') }}" rel="stylesheet" type="text/css">
+    {% elif request.endpoint == 'signup' %}
+    <link href="{{ url_for('static', filename='css/input.css') }}" rel="stylesheet" type="text/css">
+    {% elif request.endpoint == 'top' %}
+    <link href="{{ url_for('static', filename='css/top.css') }}" rel="stylesheet" type="text/css">
+    {% elif request.endpoint == 'home' %}
+    <link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet" type="text/css">
+    {% elif request.endpoint == 'msgboard' %}
+    <link href="{{ url_for('static', filename='css/message.css') }}" rel="stylesheet" type="text/css">
+    {% elif request.endpoint == 'addmsg' %}
+    <link href="{{ url_for('static', filename='css/addmessage.css') }}" rel="stylesheet" type="text/css">
+    {% elif request.endpoint == 'edit_message' %}
+    <link href="{{ url_for('static', filename='css/edit_message.css') }}" rel="stylesheet" type="text/css">
+    {% endif %}
+    <title>{{title}}</title>
+</head>
+<body>
+    {% block content%}
+    {% endblock content%}
+    {% block footer%}
+    {% endblock footer%}
+</body>
+</html>

@@ -1,0 +1,165 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: helvetica, sans-serif;
+}
+
+.navbar{
+    height:70px;
+    display: flex;
+    align-items: center;
+    background: #485563;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    justify-content: flex-end;
+}
+
+.navbar ul{
+    display: flex;
+    margin-right: 30px;
+}
+
+.navbar ul li{
+    list-style: none;
+    margin-right:25px;
+}
+
+.navbar ul li a{
+    color:#fff;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover{
+    color:lightgray;
+}
+
+.flash{
+    margin-top:15px;
+    margin-left:20px;
+}
+
+
+.content{
+    width:50%;
+    margin:auto;
+    margin-top:30px;
+}
+
+.content h1{
+    margin:20px 0;
+}
+
+.content p{
+    margin:15px 0;
+}
+
+.title{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding:8px;
+}
+
+#add{
+    color:black;
+    transition-property: transform;
+	transition-duration: 1s;
+}
+
+#add:hover{
+    transform: rotateY(180deg);
+    color:#0066ff;
+}
+
+
+.msg-container{
+    padding:10px;
+}
+
+.msg-container:hover{
+    background-color:#DCDCDC ;
+}
+
+
+.msg-container ul{
+    list-style: none;
+}
+
+.msg-container ul li{
+    margin:10px 0;
+}
+
+
+#author{
+    color:#0066ff;
+    font-size: 18px;
+}
+
+#author i{
+    margin-right: 8px;
+}
+
+#message{
+    color: #696969;
+}
+
+#date{
+    color: #696969;
+    font-size: 15px;
+}
+
+.flex{
+    display: flex;
+}
+
+#link{
+    font-size: 14px;
+    margin-right:10px;
+    margin-top:1px;
+    
+}
+
+#link a{
+    text-decoration: none;
+    color:#0066ff;
+}
+
+#link a:hover{
+    color:purple;
+}
+
+#btn{
+    border:none;
+    color:#0066ff;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+#btn:hover{
+    color:purple;
+}
+
+.wrapper{
+    min-height: 100vh;
+    position: relative;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;     
+    background: #485563;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+footer p{
+    color:#000;
+    text-align: center;
+    padding-top:20px;
+    font-size: 14px;
+}
+

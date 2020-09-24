@@ -1,0 +1,45 @@
+{% extends "base.html"%}
+
+{% block content%}
+<!--add message-->
+<div class="navbar">
+    <span>{{user}}</span>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home')}}">Home</a></li>
+            <li><a href="{{ url_for('msgboard')}}">Message Board</a></li>
+            <li><a href="{{ url_for('signout')}}">Sing out</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="flash">
+    {% block flash %}
+        {% with messages=get_flashed_messages()%}  
+            {% if messages %}
+                {% for msg in messages %}
+                    <p>{{msg}}</p>
+                {% endfor%}
+            {% endif %}
+        {% endwith %}
+    {% endblock flash %}
+</div>
+
+<div class="container">
+        <h1>Add Message</h1>
+        <form action="{{ url_for('addmsg')}}" method="POST" class="forms">
+                <textarea name="message"  placeholder="Write something..."></textarea>
+                <br>
+                <button type="submit" value="Submit">Post</button>
+        </form>
+</div>
+{% endblock content %}
+
+{% block footer%}
+<div class="wrapper">
+    <footer>
+        <hr>
+        <p>&copy; 2020 yhagiwara.com<p>
+    </footer>
+</div>
+{% endblock footer%}

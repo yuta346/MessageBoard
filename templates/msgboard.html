@@ -1,0 +1,67 @@
+{% extends "base.html"%}
+
+{% block content%}
+    <div class="navbar">
+        <span>{{user}}</span>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home')}}">Home</a></li>
+                <li><a href="{{ url_for('addmsg')}}">Add Message</a></li>
+                <li><a href="{{ url_for('signout')}}">Sing out</a></li>
+            </ul>
+        </nav>
+    </div>
+
+<div class="flash">
+    {% block flash %}
+        {% with messages=get_flashed_messages()%}  
+            {% if messages %}
+                {% for msg in messages %}
+                    <p>{{msg}}</p>
+                {% endfor%}
+            {% endif %}
+        {% endwith %}
+    {% endblock flash %}
+</div>
+
+
+<div class="content">
+    <div class="title">
+    
+        <h1>Message <i class="fas fa-inbox"></i></h1>
+        <a id="add" href="/addmsg"><i class="fas fa-edit fa-2x"></i></a>
+    </div>
+
+    
+    {% for message in messages %}
+    <div class="msg-container">
+        <ul>
+            <li id="author"><i class="fas fa-user"></i> {{message.author}}</li>
+            <li id="message">{{message.body}}</li>
+            <li id="date">{{message.create_date}}</li> 
+            
+        </ul>
+        <!-- <span id="link"><a href="#">Edit</a></span>
+        <span id="link"><a href="#">Delete</a></span> -->
+        <ul class="flex">
+            <form method = "POST" id="link">
+                <a href="edit_message/{{message.id}}" >Edit</a>
+            </form>
+            <form action="{{url_for('delete_message', id=message.id)}}" method="POST" >
+                <input id = "btn" type="submit" value="Delete">
+            </form>
+        </ul>
+        
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+
+{% block footer%}
+    <div class="wrapper">
+        <footer>
+            <hr>
+            <p>&copy; 2020 yhagiwara.com<p>
+        </footer>
+    </div>
+{% endblock footer%}

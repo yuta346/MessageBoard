@@ -1,0 +1,24 @@
+{% extends "base.html"%}
+
+{% block content%}
+	<div class="container">
+		<h1>Create a New Account</h1>
+		
+		<p id="message">Already have an account? <a href="{{ url_for('signin')}}">Sign in here</a>.</p>
+		<form class="form", method="POST", action="/signup">
+			<input class="input" type="text" name="username" placeholder="User name">
+			<input class="input" type="email" name="email" placeholder="Email address">
+			<input class="input" type="Password" name="password" placeholder="Password">
+			<div><button type="submit" value="Submit">Sign up</button></div>
+		</form>
+	</div>
+{% endblock content%}
+
+{% block footer%}
+	<div class="wrapper">
+		<footer>
+			<hr>
+			<p>&copy; 2020 yhagiwara.com<p>
+		</footer>
+	</div>
+{% endblock footer%}
