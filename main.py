@@ -52,7 +52,7 @@ def signup():
         session["USERNAME"] = username      #set username to the session
         session['EMAIL'] = email            #set email to the session
 
-     #create cursor
+        #create cursor
         cur = mysql.connection.cursor()
 
         cur.execute("INSERT INTO users(username, email,  password) VALUES (%s, %s, %s)", (username,  email,  password))
