@@ -45,8 +45,6 @@ def signup():
         req = request.form
         username = str(req.get("username"))
         email = str(req.get("email"))
-        # username = str(req.get("username"))
-        # password = str(req.get("password"))
         password = sha256_crypt.encrypt(str(req.get("password")))
         
 
